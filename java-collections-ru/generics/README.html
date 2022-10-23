@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h1>Дженерики</h1>
+
+<h2>main/java/exercise/App.java</h2>
+
+<h2>Задачи</h2>
+
+<ul>
+<li><p>Создайте класс <code>App</code>с публичным статическим методом <code>findWhere()</code>, который принимает следующие аргументы:</p>
+
+<ul>
+<li>Список <code>List</code> книг. Каждая книга представляет собой словарь <code>Map</code>, в котором ключи и значения представлены строками</li>
+<li>Словарь <code>Map</code> из пар ключей и значений, представленных строками</li>
+</ul>
+
+<p><p>Метод должен возвращать список <code>List</code> со всеми книгами, данные которых соответствуют всем переданным парам. Если совпадений нет, метод должен вернуть пустой список.</p></li>
+</ul>
+```java
+List<Map> books = new ArrayList&lt;>();</p>
+
+<p>Map<String, String> book1 = new HashMap&lt;>(
+Map.of("title", "Cymbeline", "author", "Shakespeare", "year", "1611")
+);
+Map<String, String> book2 = new HashMap&lt;>(
+    Map.of("title", "Book of Fooos", "author", "FooBar", "year", "1111")
+);
+Map<String, String> book3 = new HashMap&lt;>(
+    Map.of("title", "The Tempest", "author", "Shakespeare", "year", "1611")
+);
+Map<String, String> book4 = new HashMap&lt;>(
+    Map.of("title", "Book of Foos Barrrs", "author", "FooBar", "year", "2222")
+);
+Map<String, String> book5 = new HashMap&lt;>(
+    Map.of("title", "Still foooing", "author", "FooBar", "year", "3333")
+);</p>
+
+<p>books.add(book1);
+books.add(book2);
+books.add(book3);
+books.add(book4);
+books.add(book5);</p>
+
+<p>Map<String, String> where = new HashMap&lt;>(Map.of("author", "Shakespeare", "year", "1611"));</p>
+
+<p>List<Map> result = App.findWhere(books, where);</p>
+
+<p>System.out.println(result); // =>
+// [
+//     {title=Cymbeline, year=1611, author=Shakespeare},
+//     {title=The Tempest, year=1611, author=Shakespeare}
+// ]
+```</p>
+
+</body>
+</html>
